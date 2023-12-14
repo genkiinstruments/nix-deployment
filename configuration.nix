@@ -68,6 +68,7 @@
     flags = [ "--refresh" ];
   };
   networking = {
+    firewall.enable = false;
     networkmanager.enable = lib.mkForce false;
     interfaces."wlan0".useDHCP = true;
     wireless = {
