@@ -19,6 +19,7 @@
     procps
   ];
   services.openssh.enable = true;
+  systemd.services.display-manager.restartIfChanged = true;
   users = {
     users.default = {
       password = "default";
