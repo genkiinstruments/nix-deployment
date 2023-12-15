@@ -5,7 +5,7 @@
     ./zram.nix
     ./yggdrasil.nix
     ./motd.nix
-    # ./examples/gnome.nix
+    ./examples/gnome.nix
     #./examples/xfce4.nix
     #./examples/netdata.nix
     #./examples/vaultwarden.nix
