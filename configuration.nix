@@ -5,10 +5,10 @@
     ./zram.nix
     ./yggdrasil.nix
     ./motd.nix
-#    ./examples/gnome.nix
-#    ./examples/xfce4.nix
-#    ./examples/netdata.nix
-#    ./examples/vaultwarden.nix
+    #    ./examples/gnome.nix
+    ./examples/xfce4.nix
+    ./examples/netdata.nix
+    ./examples/vaultwarden.nix
     #./examples/led.nix
   ];
   environment.systemPackages = with pkgs; [
@@ -25,33 +25,8 @@
       isNormalUser = true;
       extraGroups = [ "wheel" "gpio" ];
     };
-    groups.gpio = {};
+    groups.gpio = { };
   };
-
-#   systemd.user.services.blinkLED = {
-#    description = "Blink LED after rebuild";
-#    after = [ "default.target" ];
-#    wantedBy = [ "default.target" ];
-#    serviceConfig = {
-#      ExecStart = let
-#        gpioset="${pkgs.libgpiod}/bin/gpioset";
-#      in ''
-#        ${gpioset} gpioset -c gpiochip0 18=1 &
-#      '';
-#      User = "default";
-#      Group = "default";
-#    };
-#  };
-
- systemd.services.turnOnLED = {
-   description = "Turn on LED on GPIO pin 18";
-   wantedBy = [ "multi-user.target" ];
-   serviceConfig = {
-     ExecStart = "${pkgs.libgpiod}/bin/gpioset -c gpiochip0 18=1";
-     Type = "oneshot";
-     RemainAfterExit = true;
-   };
- };
 
   # Change permissions gpio devices
   services.udev.extraRules = ''
