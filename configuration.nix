@@ -10,7 +10,7 @@
     #./examples/xfce4.nix
     #./examples/netdata.nix
     #./examples/vaultwarden.nix
-    ./examples/led.nix
+    # ./examples/led.nix
   ];
   environment.systemPackages = with pkgs; [
     vim
