@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixos-hardware.url = "github:nixos/nixos-hardware";
   };
   outputs = { self, nixpkgs, nixos-hardware }: rec {
