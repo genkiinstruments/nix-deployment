@@ -19,7 +19,7 @@
     procps
   ];
   services.openssh.enable = true;
-  systemd.services.display-manager.restartIfChanged = true;
+  systemd.services.display-manager.restartIfChanged = lib.mkForce true;
   users = {
     users.default = {
       password = "default";
