@@ -8,7 +8,7 @@
     # ./examples/gnome.nix
     # ./examples/plasma.nix
     #./examples/xfce4.nix
-    #./examples/netdata.nix
+    ./examples/netdata.nix
     #./examples/vaultwarden.nix
     ./examples/led.nix
   ];
@@ -45,7 +45,7 @@
     flags = [ "--refresh" ];
   };
   networking = {
-    firewall.enable = false;
+    firewall.enable = true;
     networkmanager.enable = lib.mkForce false;
     interfaces."wlan0".useDHCP = true;
     wireless = {
